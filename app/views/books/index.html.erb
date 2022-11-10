@@ -1,0 +1,50 @@
+<body>
+  <h1>Books</h1>
+
+  <table>
+    <!--ここに、テーブルを記述していく（未完成）
+    Title：booksテーブルのtitleカラムを表示
+    Body：booksテーブルのbodyカラムを表示
+    列は際限なく追加でいい。その際、eachメソッドでテーブルデータが終わるまで回す？？-->
+  </table>
+
+  <!--テストで実装（テーブル表記は後）-->
+  <% @books.each do |book| %>
+    <p>テスト：タイトル</p>
+    <span><%= book.title %></span>
+
+    <p>テスト：内容</p>
+    <span><%= book.body %></span>
+
+    <!--showページへのリンク-->
+    <span>
+      <%= link_to "Show", book_path(book.id) %>
+    </span>
+
+    <!--editページへのリンク-->
+    <span>
+      <%= link_to "Edit", edit_book_path(book.id) %>
+    </span>
+
+    <!--destroy、削除のリンク-->
+    <span>
+      <%= link_to "Destroy", book_path(book.id),method: :delete, "data-confirm" => "Are you sure?" %>
+    </span>
+
+  <% end %>
+
+
+  <h3>New book</h3>
+  <!--新規追加機能を実装。showページにリダイレクト-->
+       <!--form_withの記述。indexにて新規投稿のフォームを作るため-->
+    <%= form_with model: @book, url:'/books',method: :post do |f| %>
+      <h6>Title</h6>
+      <%= f.text_field :title %>
+
+      <h6>Body</h6>
+      <%= f.text_field :body %>
+
+      <%= f.submit 'Create Book' %>
+    <% end %>
+
+</body>

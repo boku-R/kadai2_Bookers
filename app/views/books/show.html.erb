@@ -1,0 +1,18 @@
+<h1>showページです</h1>
+<p>編集中です</p>
+
+    <p>テスト：タイトル</p>
+    <span><%= @book.title %></span>
+
+    <p>テスト：内容</p>
+    <span><%= @book.body %></span>
+
+    <!--editページへのリンク-->
+    <span>
+      <%= link_to "Edit", edit_book_path(@book.id) %>|
+    </span>
+
+    <!--indexページへのリンク-->
+    <span>
+      <%= link_to "Back", books_path %>
+    </span>
