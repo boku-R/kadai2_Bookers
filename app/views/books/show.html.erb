@@ -1,10 +1,14 @@
+<div class = "flash_msg">
+  <%= flash[:notice] %>
+</div>
+
 <h1>showページです</h1>
 <p>編集中です</p>
 
-    <p>テスト：タイトル</p>
+    <p>Title</p>
     <span><%= @book.title %></span>
 
-    <p>テスト：内容</p>
+    <p>Body</p>
     <span><%= @book.body %></span>
 
     <!--editページへのリンク-->

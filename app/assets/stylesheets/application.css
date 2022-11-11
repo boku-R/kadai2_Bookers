@@ -31,6 +31,8 @@
   a,p{
     margin:30px;
   }
-  
-  
+
+  .flash_msg{
+    color:green;
+  }
 

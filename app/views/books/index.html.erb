@@ -10,10 +10,10 @@
 
   <!--テストで実装（テーブル表記は後）-->
   <% @books.each do |book| %>
-    <p>テスト：タイトル</p>
+    <p>Title</p>
     <span><%= book.title %></span>
 
-    <p>テスト：内容</p>
+    <p>Body</p>
     <span><%= book.body %></span>
 
     <!--showページへのリンク-->
@@ -33,6 +33,15 @@
 
   <% end %>
 
+<!--ここにバリデーションエラー時の文章を記述-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %> errors prohibited this book form being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
 
   <h3>New book</h3>
   <!--新規追加機能を実装。showページにリダイレクト-->

@@ -1,5 +1,15 @@
 <h1>Editing Book</h1>
 
+<!--ここにバリデーションエラー時の文章を記述-->
+<% if @book.errors.any? %>
+  <%= @book.errors.count %> errors prohibited this book form being saved:
+  <ul>
+    <% @book.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+<% end %>
+
 <!--form_withを使う-->
 <!--下の一行は、次の記述と同等：< %= form_with model: @book do |f| % >-->
 <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
