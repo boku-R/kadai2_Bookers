@@ -1,5 +1,6 @@
 <h1>Editing Book</h1>
 
+<div class = "error_msg">
 <!--ここにバリデーションエラー時の文章を記述-->
 <% if @book.errors.any? %>
   <%= @book.errors.count %> errors prohibited this book form being saved:
@@ -9,27 +10,29 @@
     <% end %>
   </ul>
 <% end %>
+</div>
 
-<!--form_withを使う-->
-<!--下の一行は、次の記述と同等：< %= form_with model: @book do |f| % >-->
-<%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
+<div class="form">
+  <!--form_withを使う-->
+  <!--下の一行は、次の記述と同等：< %= form_with model: @book do |f| % >-->
+  <%= form_with model: @book, url: book_path(@book.id), method: :patch do |f| %>
 
-  <h4>Title</h4>
-  <%= f.text_field :title %>
+    <h4>Title</h4>
+    <div class="field"><%= f.text_field :title %></div>
 
-  <h4>Body</h4>
-  <%= f.text_field :body %>
+    <h4>Body</h4>
+    <div class="field"><%= f.text_area :body %></div>
 
-  <%= f.submit 'Update Book' %>
+    <div class="action"><%= f.submit 'Update Book' %></div>
 
-      <!--showページへのリンク-->
+    <!--showページへのリンク-->
     <span>
       <%= link_to "Show", book_path(@book.id) %> |
     </span>
-
     <!--indexページへのリンク-->
     <span>
       <%= link_to "Back", books_path %>
     </span>
 
-<% end %>
+  <% end %>
+</div>

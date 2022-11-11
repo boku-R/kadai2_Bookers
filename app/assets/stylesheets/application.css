@@ -15,24 +15,63 @@
  */
 
  *{
-   maegin:0;
+   margin:0;
    padding:0;
    box-sizing:border-box;
+   color:#444;
+   font-family:verdana, arial, helvetica, sans-serif;
   }
 
   body{
-    color:#444;
-    font-family:verdana, arial, helvetica, sans-serif;
-    font-size:15px;
     line-height:15px;
     margin:30px;
   }
 
-  a,p{
-    margin:30px;
-  }
 
   .flash_msg{
     color:green;
   }
 
+ .error_msg,li{
+    color:red;
+  }
+
+th{
+  padding-right:8px;
+  padding-bottom:5px;
+  /*text-align: left;*/
+}
+
+/*
+thread{
+  display: table-cell;
+  vertical-align: inherit;
+  text-align: center;
+}
+*/
+
+table{
+  display:table;
+  margin:20px 0;
+}
+
+thread{
+  /*display: table-header-group;*/
+  /*text-align: center;*/
+  /*display: table-cell;*/
+  font-size:20px;
+}
+
+tbody{
+  text-align: left;
+  font-size:14px;
+}
+
+.form{
+  display: flex;
+  flex-direction: column;
+}
+
+.field,.action,.error_msg,p{
+  margin:20px 0;
+}

@@ -2,14 +2,9 @@
   <%= flash[:notice] %>
 </div>
 
-<h1>showページです</h1>
-<p>編集中です</p>
+    <p><strong>Title:</strong> <%= @book.title %></p>
 
-    <p>Title</p>
-    <span><%= @book.title %></span>
-
-    <p>Body</p>
-    <span><%= @book.body %></span>
+    <p><strong>Body:</strong> <%= @book.body %></p>
 
     <!--editページへのリンク-->
     <span>
