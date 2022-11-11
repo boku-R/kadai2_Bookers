@@ -27,7 +27,9 @@ class BooksController < ApplicationController
 
   def edit
     @book = Book.find(params[:id])
-      flash[:notice] = "Book was successfully updated."
+    # if @book.save
+      # flash[:notice] = "Book was successfully updated."
+    # end
   end
 
   # 編集のアクションを作成
@@ -35,6 +37,8 @@ class BooksController < ApplicationController
     book = Book.find(params[:id])
     # updateが成功・失敗した時を記述
     if book.update(book_params)
+      # フラッシュメッセージの
+      flash[:notice] = "Book was successfully updated."
       redirect_to book_path(book.id) #showページにリダイレクト
     else
       @book = book
